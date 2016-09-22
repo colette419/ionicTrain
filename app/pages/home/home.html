@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stations
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    Please type in the station below for train information:
+  </p>
+  <div>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+</div>
+<ion-list>
+<ion-item *ngFor="let station of stations" (click)="itemClicked($event, station)">
+  <h3>{{station.name}}</h3>
+  </ion-item>
+  </ion-list>
+</ion-content>
